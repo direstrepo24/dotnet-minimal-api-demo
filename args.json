@@ -1,6 +1,6 @@
 {
   "container": {
-    "image": "DOCKERHUB_USERNAME/minimal-api-demo:latest",
+    "image": "direstrepo24/minimal-api-demo:latest",
     "port": 80
   }
 }

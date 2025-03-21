@@ -41,7 +41,7 @@ jobs:
     - name: Login to DockerHub
       uses: docker/login-action@v2
       with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        username: direstrepo24
         password: ${{ secrets.DOCKERHUB_TOKEN }}
         
     - name: Build and push
@@ -49,7 +49,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/minimal-api-demo:latest
+        tags: direstrepo24/minimal-api-demo:latest
         
   deploy-to-azion:
     needs: build-and-push-docker
