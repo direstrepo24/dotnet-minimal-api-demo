@@ -1,0 +1,6 @@
+{
+  "container": {
+    "image": "DOCKERHUB_USERNAME/minimal-api-demo:latest",
+    "port": 80
+  }
+}
