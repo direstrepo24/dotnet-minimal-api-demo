@@ -68,7 +68,7 @@ jobs:
         buildPreset: "javascript"
         buildMode: "compute"
         buildEntry: "./main.js"
-    
+        
     - name: Get the output Azion Edge Deploy
       run: |
         echo "Application ID = ${{ steps.azion_deploy.outputs.applicationId }}"
