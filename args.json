@@ -1,6 +1,6 @@
 {
   "container": {
-    "image": "direstrepo24/minimal-api-demo:latest",
+    "image": "direstrepobr/minimal-api-demo:latest",
     "port": 80
   }
 }
