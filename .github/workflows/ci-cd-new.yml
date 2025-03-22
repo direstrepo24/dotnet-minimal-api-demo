@@ -44,12 +44,15 @@ jobs:
         username: direstrepobr
         password: ${{ secrets.DOCKERHUB_TOKEN }}
         
-    - name: Build and push
+    - name: Build and push multi-architecture image
       uses: docker/build-push-action@v4
       with:
         context: .
         push: true
-        tags: direstrepobr/minimal-api-demo:latest
+        platforms: linux/amd64,linux/arm64
+        tags: |
+          direstrepobr/minimal-api-demo:latest
+          direstrepobr/minimal-api-demo:multiarch
         
   deploy-to-azion:
     needs: build-and-push-docker
@@ -67,7 +70,8 @@ jobs:
         applicationName: "dotnet-minimal-api-demo"
         buildPreset: "javascript"
         buildMode: "compute"
-        buildEntry: "./main.js"
+        buildEntry: "./azion_container_main.js"
+        functionArgsFilePath: "./args.json"
         
     - name: Get the output Azion Edge Deploy
       run: |

@@ -1,0 +1,20 @@
+{
+  "name": "Default Rule",
+  "behaviours": [
+    {
+      "name": "run_function",
+      "target": "41564"
+    }
+  ],
+  "criteria": [
+    [
+      {
+        "conditional": "if",
+        "input_value": "/",
+        "operator": "starts_with",
+        "variable": "${uri}"
+      }
+    ]
+  ],
+  "active": true
+}

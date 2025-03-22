@@ -1,6 +1,6 @@
 {
   "container": {
-    "image": "direstrepobr/minimal-api-demo:latest",
+    "image": "direstrepobr/minimal-api-demo:multiarch",
     "port": 8080
   }
 }
