@@ -16,7 +16,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '10.0.x'
+        dotnet-version: '8.0.x'
         
     - name: Restore dependencies
       run: dotnet restore
@@ -41,15 +41,15 @@ jobs:
     - name: Login to DockerHub
       uses: docker/login-action@v2
       with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
+        username: direstrepobr
+        password: ${{ github.token }}
         
     - name: Build and push
       uses: docker/build-push-action@v4
       with:
         context: .
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/minimal-api-demo:latest
+        tags: direstrepobr/minimal-api-demo:latest
         
   deploy-to-azion:
     needs: build-and-push-docker
@@ -63,7 +63,7 @@ jobs:
       id: azion_deploy
       uses: aziontech/edge-computing-actions@v0
       with:
-        azionPersonalToken: ${{ secrets.AZION_TOKEN }}
+        azionPersonalToken: ${{ github.token }}
         applicationName: "dotnet-minimal-api-demo"
         buildPreset: "javascript"
         buildMode: "compute"

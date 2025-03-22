@@ -10,11 +10,9 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 // Configure middleware
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+// Enable Swagger in all environments
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
@@ -25,7 +23,7 @@ app.MapGet("/api/info", () => new
 {
     Name = "Minimal API Demo",
     Version = "1.0.0",
-    Framework = ".NET 10",
+    Framework = ".NET 8",
     Timestamp = DateTime.UtcNow
 });
 
