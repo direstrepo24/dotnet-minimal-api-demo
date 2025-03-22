@@ -42,7 +42,7 @@ jobs:
       uses: docker/login-action@v2
       with:
         username: direstrepobr
-        password: dckr_pat_FV0xh97jnai4j2hWKCSsj5H_XtI
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
         
     - name: Build and push
       uses: docker/build-push-action@v4
