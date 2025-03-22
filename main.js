@@ -2,7 +2,7 @@
 async function handleRequest(request) {
   try {
     // Forward the request to the Docker container
-    const containerUrl = "http://localhost:80"; // This will be replaced by Azion with the actual container URL
+    const containerUrl = "http://localhost:8080"; // This will be replaced by Azion with the actual container URL
     
     // Clone the original request
     const requestInit = {
