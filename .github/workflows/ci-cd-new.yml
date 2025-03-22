@@ -1,10 +1,13 @@
-name: Build, Test, and Deploy
+name: Build, Test, and Deploy (Alternative - Manual Only)
 
+# Este workflow está deshabilitado para evitar despliegues duplicados
+# Solo se activará manualmente cuando sea necesario
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Razón para ejecutar este workflow alternativo'
+        required: true
 
 jobs:
   build-and-test:
